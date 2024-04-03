@@ -14,6 +14,10 @@
                     <include name="apiPOSTSearchProductWithoutParameter"/>
                     <include name="verifyLoginWithDetails"/>
                     <include name="verifyLoginWithoutEmail"/>
+                </methods>
+            </class>
+            <class name="org.example.reqresWeb">
+                <methods>
                     <include name="reqresPOSTMethod"/>
                     <include name="testGETOneDetail"/>
                     <include name="reqresPUTMethod"/>
