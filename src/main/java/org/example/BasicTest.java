@@ -11,8 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class BasicTest {
     @BeforeMethod
     public void setup() {
-//        baseURI = "https://automationexercise.com/api";
-        baseURI = "https://reqres.in/api";
+        baseURI = "https://automationexercise.com/api";
     }
 
     @Test(priority = 2)
@@ -164,11 +163,8 @@ public class BasicTest {
                 .then()
                 .statusCode(204)
                 .header("Content-Length", equalTo("0"))
-                .body(isEmptyString());
-
-
-}
-
+                .body(isEmptyString()).log().all();
+    }
 }
 
 
