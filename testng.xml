@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="/home/azilen/Meet _assignment/java dev/Spring/Api_AutomationWithRestAssured">
+        <classes>
+            <class name="org.example.BasicTest">
+                <methods>
+                    <include name="APIGetProductsList"/>
+                    <include name="ApiPOSTProductList"/>
+                    <include name="apiGETBrandsList"/>
+                    <include name="apiPUTBrandsList"/>
+                    <include name="apiPOSTSearchProductWithParameter"/>
+                    <include name="apiPOSTSearchProductWithoutParameter"/>
+                    <include name="verifyLoginWithDetails"/>
+                    <include name="verifyLoginWithoutEmail"/>
+                    <include name="reqresPOSTMethod"/>
+                    <include name="testGETOneDetail"/>
+                    <include name="reqresPUTMethod"/>
+                    <include name="reqresDELETEMethod"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
