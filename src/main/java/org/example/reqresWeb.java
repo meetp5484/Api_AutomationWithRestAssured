@@ -3,6 +3,7 @@ package org.example;
 import io.restassured.http.ContentType;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
@@ -10,12 +11,13 @@ public class reqresWeb {
 
 
     @BeforeMethod
-    public void setupReqRes(){
+    public void setupReqRes() {
 
         baseURI baseUri = new baseURI();
         baseUri.setUPReqres();
 
     }
+
     @Test(priority = 1)
     public void reqresPOSTMethod() {
         String reqBody = "{\"name\": \"morpheus\",\"job\": \"leader\"}";
@@ -35,7 +37,7 @@ public class reqresWeb {
     }
 
     @Test(priority = 2)
-    public void testGETOneDetail(){
+    public void testGETOneDetail() {
         given().get("/users/2").then()
                 .statusCode(200)
                 .header("Content-Type", "application/json; charset=utf-8")
@@ -44,6 +46,7 @@ public class reqresWeb {
                 .log().all();
 
     }
+
     @Test(priority = 1)
     public void reqresPUTMethod() {
         String reqbody = "<user>" +
@@ -58,7 +61,7 @@ public class reqresWeb {
                 .statusCode(201)
                 .header("Content-Type", "application/json; charset=utf-8")
                 .body(not(isEmptyString()))
-                ;
+        ;
     }
 
     @Test(priority = 1)
@@ -75,8 +78,9 @@ public class reqresWeb {
                 .header("Content-Type", "application/json; charset=utf-8")
                 .body("job", equalTo("zion resident"));
     }
+
     @Test
-    public void reqresDELETEMethod(){
+    public void reqresDELETEMethod() {
         given().delete("users/2")
                 .then()
                 .statusCode(204)

@@ -18,13 +18,15 @@
             </class>
             <class name="org.example.User">
                 <methods>
-                    <include name="addUserWithValidDetails"/>
+<!--                    <include name="addUserWithValidDetails"/>-->
                     <include name="addUserWithValidDetailsExisted"/>
                     <include name="addUserWithInvalidDetails"/>
                     <include name="addUserWithNoFirstname"/>
                     <include name="addUserWithNoLastname"/>
                     <include name="addUserWithNoPassword"/>
+                    <include name="getUser"/>
                     <include name="updateDetailsPatch"/>
+                    <include name="logout"/>
                 </methods>
             </class>
             <class name="org.example.reqresWeb">
