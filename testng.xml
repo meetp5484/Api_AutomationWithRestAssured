@@ -16,11 +16,23 @@
                     <include name="verifyLoginWithoutEmail"/>
                 </methods>
             </class>
+            <class name="org.example.User">
+                <methods>
+                    <include name="addUserWithValidDetails"/>
+                    <include name="addUserWithValidDetailsExisted"/>
+                    <include name="addUserWithInvalidDetails"/>
+                    <include name="addUserWithNoFirstname"/>
+                    <include name="addUserWithNoLastname"/>
+                    <include name="addUserWithNoPassword"/>
+                    <include name="updateDetailsPatch"/>
+                </methods>
+            </class>
             <class name="org.example.reqresWeb">
                 <methods>
                     <include name="reqresPOSTMethod"/>
                     <include name="testGETOneDetail"/>
                     <include name="reqresPUTMethod"/>
+                    <include name="reqresPATCHMethod"/>
                     <include name="reqresDELETEMethod"/>
                 </methods>
             </class>

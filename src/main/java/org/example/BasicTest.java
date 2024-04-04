@@ -11,7 +11,11 @@ import static org.junit.Assert.assertEquals;
 public class BasicTest {
     @BeforeMethod
     public void setup() {
-        baseURI = "https://automationexercise.com/api";
+
+        baseURI baseURI1 = new baseURI();
+        baseURI1.setUPBasicTest();
+
+
     }
 
     @Test(priority = 2)
@@ -21,6 +25,7 @@ public class BasicTest {
                 .header("Content-Type", "text/html; charset=utf-8")
                 .time(lessThan(2000L)).log().all();
     }
+
     @Test(priority = 2)
     public void ApiPOSTProductList() {
 
