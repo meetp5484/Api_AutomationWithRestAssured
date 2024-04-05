@@ -23,26 +23,36 @@ public class reqresWeb {
         String reqBody = "{\"name\": \"morpheus\",\"job\": \"leader\"}";
         given()
                 .body(reqBody)
-                .contentType(ContentType.XML)
-                .accept(ContentType.XML)
+                .contentType(ContentType.JSON)  // Correct content type for request body
+                .accept(ContentType.JSON)  // Correct accept header for response
                 .when()
                 .post("/users")
                 .then()
                 .statusCode(201)
                 .header("Content-Type", "application/json; charset=utf-8")
-//                .body("user.name", equalTo("morpheus"))
-//                .body("user.job", equalTo("leader"))
+                .body("name", equalTo("morpheus"))
+                .body("job", equalTo("leader"))
+                .log().all();
+    }
+
+    @Test(priority = 2)
+    public void testGETListDetail() {
+        given().get("/users/2").then()
+                .statusCode(200)
+                .header("Content-Type", "application/json; charset=utf-8")
+                .body("data.id", hasItem("2"))
                 .log().all();
 
     }
+
 
     @Test(priority = 2)
     public void testGETOneDetail() {
         given().get("/users/2").then()
                 .statusCode(200)
                 .header("Content-Type", "application/json; charset=utf-8")
-//                .body("data.id",equalTo(2))
-//                .body("data.email", equalTo("janet.weaver@reqres.in"))
+                .body("data.id", equalTo(2))
+                .body("data.email", equalTo("janet.weaver@reqres.in"))
                 .log().all();
 
     }
